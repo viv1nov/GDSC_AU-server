@@ -1,7 +1,8 @@
 import { QueModel } from "../model/Que1.js";
 
 export const submitQuestions = async (req, res) => {
-  const { owner, email, que1, que2, que3, que4, submitedBy } = req.body;
+  const { owner, email, que1, que2, que3, que4, que5, task, time, submitedBy } =
+    req.body;
 
   try {
     const newSubmit = new QueModel({
@@ -11,6 +12,10 @@ export const submitQuestions = async (req, res) => {
       que2,
       que3,
       que4,
+      que5,
+      task,
+      time,
+
       submitedBy,
     });
     await newSubmit.save();
