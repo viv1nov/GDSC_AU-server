@@ -7,14 +7,12 @@ let queSchema = new mongoose.Schema({
   que2: String,
   que3: String,
   que4: String,
+  que5: String,
+  task: String,
+  time: String,
   submitedBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "users",
-    required: true,
-  },
-  date: {
-    type: String,
-    default: new Date().toUTCString().slice(5, 16),
     required: true,
   },
 });
