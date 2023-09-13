@@ -12,7 +12,6 @@ export const submitQuestions = async (req, res) => {
       que2,
       que3,
       que4,
-      que5,
       task,
       time,
 
