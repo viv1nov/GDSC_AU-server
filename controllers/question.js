@@ -1,7 +1,7 @@
 import { QueModel } from "../model/Que1.js";
 
 export const submitQuestions = async (req, res) => {
-  const { owner, email, que1, que2, que3, que4,  task, time, submitedBy } =
+  const { owner, email, que1, que2, que3,  task, time, submitedBy } =
     req.body;
 
   try {
@@ -11,7 +11,6 @@ export const submitQuestions = async (req, res) => {
       que1,
       que2,
       que3,
-      que4,
       task,
       time,
 
