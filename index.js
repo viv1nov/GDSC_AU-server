@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyparser from "body-parser";
-import session from "express-session";
 
 dotenv.config();
 
@@ -11,28 +10,11 @@ const app = express();
 
 app.use(express.json());
 app.use(
-  cors({
-    origin: process.env.ORIGIN,
-    credentials: true,
-  })
+  cors()
 );
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-app.use(
-  session({
-    name: "app.sid",
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    // cookie: {
-    // 	maxAge: 3600000,
-    // 	httpOnly: true,
-    // 	secure: false, // Set to true if using HTTPS
-    // 	sameSite: 'none', // Adjust as needed
-    // },
-  })
-);
 
 // app.use(dotenv.config());
 
