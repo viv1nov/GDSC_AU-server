@@ -6,6 +6,7 @@ import {
   singleUser,
   updatePoints,
   updateUser,
+  dashboardUpdate
 } from "../controllers/users.js";
 
 
@@ -18,5 +19,6 @@ router.patch("/updateUser/:userID",  updateUser);
 router.put("/updatePoints/:resID", updatePoints);
 
 router.delete("/deleteUser/:userID", deleteUser);
+router.patch("/dashboardUpdate/:userID", dashboardUpdate)
 
 export { router as UserRouter };
