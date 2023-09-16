@@ -72,3 +72,18 @@ export const updatePoints = async (req, res) => {
     return res.status(504).json(error);
   }
 };
+export const dashboardUpdate = async (req, res) => {
+  const { name, email, points } = req.body;
+  console.log(req.params.userID);
+  try {
+    await UserModel.findByIdAndUpdate(req.params.userID, {
+      name,
+      points,
+      email,
+    });
+    const updatedUser = await UserModel.findById(req.params.resID);
+    return res.status(200).json(updatedUser);
+  } catch (error) {
+    return res.status(504).json(error);
+  }
+};
